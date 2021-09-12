@@ -3,14 +3,19 @@ import PropTypes from 'prop-types';
 
 class SelectPagamento extends React.Component {
   render() {
-    const { handleChange } = this.props;
+    const { handleChange, value } = this.props;
     return (
-      <label htmlFor="pagamento-input">
+      <label htmlFor="method">
         Método de pagamento:
-        <select id="pagamento-input" name="pagamento" onChange={ handleChange }>
-          <option value="dinheiro"> Dinheiro </option>
-          <option value="credito"> Cartão de crédito </option>
-          <option value="debito"> Cartão de débito </option>
+        <select
+          id="method"
+          value={ value }
+          name="method"
+          onChange={ handleChange }
+        >
+          <option value="Dinheiro"> Dinheiro </option>
+          <option value="Cartão de crédito"> Cartão de crédito </option>
+          <option value="Cartão de débito"> Cartão de débito </option>
         </select>
       </label>
     );

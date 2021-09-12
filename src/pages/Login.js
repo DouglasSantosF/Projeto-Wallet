@@ -60,7 +60,7 @@ class Login extends React.Component {
               Senha:
               <input
                 id="password-input"
-                type="text"
+                type="password"
                 data-testid="password-input"
                 name="password"
                 onChange={ this.handleChange }

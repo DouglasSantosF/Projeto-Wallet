@@ -7,7 +7,7 @@ import Input from '../components/Input';
 import SelectPagamento from '../components/SelectPagamento';
 import SelectDespesa from '../components/SelectDespesa';
 import './Wallet.css';
-import { setCurrencies } from '../actions';
+import { setExpenses } from '../actions';
 
 class Wallet extends React.Component {
   constructor(props) {
@@ -15,11 +15,11 @@ class Wallet extends React.Component {
     this.state = {
       loading: true,
       result: '',
-      valor: '',
-      descricao: '',
-      moeda: '',
-      pagamento: '',
-      despesa: '',
+      value: '',
+      description: '',
+      currency: 'USD',
+      method: 'Dinheiro',
+      tag: 'Alimentação',
     };
     this.getApiMoedas = this.getApiMoedas.bind(this);
     this.getOptions = this.getOptions.bind(this);
@@ -32,15 +32,9 @@ class Wallet extends React.Component {
   }
 
   onSubmit() {
-    const { setStateCurrencies } = this.props;
-    setStateCurrencies(this.state);
-    this.setState({
-      valor: '',
-      descricao: '',
-      moeda: '',
-      pagamento: '',
-      despesa: '',
-    });
+    const { setStateExpenses } = this.props;
+    const { value, description, currency, method, tag } = this.state;
+    setStateExpenses({ value, description, currency, method, tag });
   }
 
   async getApiMoedas() {
@@ -70,41 +64,41 @@ class Wallet extends React.Component {
   }
 
   render() {
-    const { emailReducer } = this.props;
-    const { loading, valor, descricao, moeda, pagamento, despesa } = this.state;
+    const { emailReducer, despesaRedux } = this.props;
+    const { loading, value, description, currency, tag, method } = this.state;
     const Loading = <h1>Loading...</h1>;
     return (
       <div>
-        <Header email={ emailReducer } />
+        <Header email={ emailReducer } expense={ despesaRedux } />
         { loading ? Loading : (
           <form className="form">
             <Input
               id="valor-input"
-              value={ valor }
+              value={ value }
               text="Valor:"
-              name="valor"
+              name="value"
               handleChange={ this.handleChange }
             />
             <Input
               id="descricao-input"
-              value={ descricao }
+              value={ description }
               text="Descrição:"
-              name="descricao"
+              name="description"
               handleChange={ this.handleChange }
             />
             <label htmlFor="moeda-input">
               Moeda:
               <select
-                name="moeda"
+                name="currency"
                 onChange={ this.handleChange }
-                value={ moeda }
+                value={ currency }
                 id="moeda-input"
               >
                 {this.getOptions()}
               </select>
             </label>
-            <SelectPagamento value={ pagamento } handleChange={ this.handleChange } />
-            <SelectDespesa value={ despesa } handleChange={ this.handleChange } />
+            <SelectPagamento value={ method } handleChange={ this.handleChange } />
+            <SelectDespesa value={ tag } handleChange={ this.handleChange } />
             <Button onSubmit={ this.onSubmit } />
           </form>
         )}
@@ -119,10 +113,11 @@ Wallet.propTypes = {
 
 const mapStateToProps = (state) => ({
   emailReducer: state.user.email,
+  despesaRedux: state.wallet.expenses,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  setStateCurrencies: (state) => dispatch(setCurrencies(state)),
+  setStateExpenses: (state) => dispatch(setExpenses(state)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Wallet);
