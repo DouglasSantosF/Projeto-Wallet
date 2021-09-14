@@ -29,7 +29,7 @@ class Header extends React.Component {
     return (
       <div>
         {loadingRedux ? LOADING : (
-          <div>
+          <dinpmv>
             <header className="header-container">
               <img className="logo" src={ imagem } alt="" />
               <div className="valor">
@@ -40,7 +40,7 @@ class Header extends React.Component {
                 </div>
               </div>
             </header>
-          </div>
+          </dinpmv>
         )}
       </div>
     );

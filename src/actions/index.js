@@ -13,7 +13,7 @@ const addExpenses = (expense) => ({
   expense,
 });
 
-const requestAPI = () => ({
+export const requestAPI = () => ({
   type: REQUEST_API,
 });
 

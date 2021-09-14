@@ -8,6 +8,7 @@ import SelectPagamento from '../components/SelectPagamento';
 import SelectDespesa from '../components/SelectDespesa';
 import './Wallet.css';
 import { setExpenses } from '../actions';
+import Table from '../components/Table';
 
 class Wallet extends React.Component {
   constructor(props) {
@@ -102,6 +103,7 @@ class Wallet extends React.Component {
             <Button onSubmit={ this.onSubmit } />
           </form>
         )}
+        <Table despesaRedux={ despesaRedux } />
       </div>
     );
   }
