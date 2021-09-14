@@ -1,34 +1,33 @@
-
 table {
   border-collapse: collapse;
   width: 100%;
 }
+
 .table-title th {
-  padding: 20px;
   background-color: bisque;
+  padding: 20px;
 }
 
 .table-body {
-  width: 100%;
   background-color: rgb(133, 188, 228);
   color: darkblue;
+  width: 100%;
 }
 
 .table-body td{
   background-color: rgb(133, 188, 228);
 }
 .table-body tr:hover {
-  color:rgb(9, 128, 112)
+  color: rgb(9, 128, 112)
 }
 
 .table-body button {
   background-color: rgb(0 51 102);
-  height: 100px;
-  border-style: none;
   border-radius: 5px;
-  height: 30px;
-  margin-top: 10px;
+  border-style: none;
   color: white;
+  height: 100px;
+  margin-top: 10px;
 }
 
 .td-dc, .td-tag {
@@ -52,6 +51,5 @@ table {
 }
 
 .btn:hover, .btn2:hover {
-  color:rgb(191, 199, 35);
+  color: rgb(191, 199, 35);
 }
-
