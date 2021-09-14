@@ -32,12 +32,17 @@ table {
 }
 
 .td-dc , .td-tag {
-  padding-left: 40px;
+  padding-left: 20px;
   padding-right: 15px;
 }
 
 .td-moedas , .td-method {
   padding-left: 70px;
+  padding-right: 15px;
+}
+
+.td-cy {
+  padding-left: 60px;
   padding-right: 15px;
 }
 
