@@ -1,0 +1,57 @@
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.table-title th {
+  padding: 20px;
+  background-color: bisque;
+}
+
+.table-body {
+  width: 100%;
+  background-color: rgb(133, 188, 228);
+  color: darkblue;
+}
+
+.table-body td{
+  background-color: rgb(133, 188, 228);
+}
+.table-body tr:hover {
+  color:rgb(9, 128, 112)
+}
+
+.table-body button {
+  background-color: rgb(0 51 102);
+  height: 100px;
+  border-style: none;
+  border-radius: 5px;
+  height: 30px;
+  margin-top: 10px;
+  color: white;
+}
+
+.td-dc, .td-tag {
+  padding-left: 40px;
+  padding-right: 15px;
+}
+
+.td-moedas, .td-method {
+  padding-left: 70px;
+  padding-right: 15px;
+}
+
+.td-value {
+  padding-left: 35px;
+  padding-right: 15px;
+}
+
+.btn {
+  margin-left: 30px;
+  margin-right: 4px;
+}
+
+.btn:hover, .btn2:hover {
+  color:rgb(191, 199, 35);
+}
+

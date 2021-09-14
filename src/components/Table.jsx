@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { requestAPI } from '../actions';
+import './Table.css';
 
 class Table extends Component {
   constructor(props) {
@@ -16,20 +17,25 @@ class Table extends Component {
     return loadingRedux ? loading : (
       despesaRedux.map((despesa, indice) => (
         <tr key={ indice }>
-          <td>{despesa.description}</td>
-          <td>{despesa.tag}</td>
-          <td>{despesa.method}</td>
-          <td>{despesa.value}</td>
-          <td>{(despesa.exchangeRates[despesa.currency].name).split('/')[0]}</td>
-          <td>{Number(despesa.exchangeRates[despesa.currency].ask).toFixed(2)}</td>
-          <td>
+          <td className="td-dc">{despesa.description}</td>
+          <td className="td-tag">{despesa.tag}</td>
+          <td className="td-method">{despesa.method}</td>
+          <td className="td-value">{despesa.value}</td>
+          <td className="td-cy">
+            {(despesa.exchangeRates[despesa.currency].name)
+              .split('/')[0]}
+          </td>
+          <td className="td-moedas">
+            {Number(despesa.exchangeRates[despesa.currency].ask)
+              .toFixed(2)}
+          </td>
+          <td className="td-moedas">
             {Number(despesa.exchangeRates[despesa.currency].ask * despesa.value)
               .toFixed(2)}
-
           </td>
-          <td>Real</td>
-          <button type="button">a</button>
-          <button type="button">a</button>
+          <td className="td-moedas">Real</td>
+          <button className="btn" type="button">Editar</button>
+          <button className="btn2" type="button">Excluir</button>
         </tr>)));
   }
 
@@ -37,7 +43,7 @@ class Table extends Component {
     return (
       <div>
         <table>
-          <thead>
+          <thead className="table-title">
             <tr>
               <th>Descrição</th>
               <th>Tag</th>
@@ -50,7 +56,7 @@ class Table extends Component {
               <th>Editar/Excluir</th>
             </tr>
           </thead>
-          <thead>
+          <thead className="table-body">
             {this.tableDespesa()}
           </thead>
         </table>
