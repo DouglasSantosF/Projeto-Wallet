@@ -14,11 +14,12 @@ table {
   width: 100%;
 }
 
-.table-body td{
+.table-body td {
   background-color: rgb(133, 188, 228);
 }
+
 .table-body tr:hover {
-  color: rgb(9, 128, 112)
+  color: rgb(9, 128, 112);
 }
 
 .table-body button {
@@ -30,12 +31,12 @@ table {
   margin-top: 10px;
 }
 
-.td-dc, .td-tag {
+.td-dc , .td-tag {
   padding-left: 40px;
   padding-right: 15px;
 }
 
-.td-moedas, .td-method {
+.td-moedas , .td-method {
   padding-left: 70px;
   padding-right: 15px;
 }
@@ -50,6 +51,6 @@ table {
   margin-right: 4px;
 }
 
-.btn:hover, .btn2:hover {
+.btn:hover , .btn2:hover {
   color: rgb(191, 199, 35);
 }
