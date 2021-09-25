@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { requestAPI } from '../actions';
+import { requestAPI, removeItem } from '../actions';
+import ButtonTable from './ButtonTable';
 import './Table.css';
 
 class Table extends Component {
@@ -9,6 +10,13 @@ class Table extends Component {
     super(props);
 
     this.tableDespesa = this.tableDespesa.bind(this);
+    this.deleteItem = this.deleteItem.bind(this);
+  }
+
+  deleteItem(id) {
+    const { despesaRedux, removeItemRedux } = this.props;
+    const filteredArray = despesaRedux.filter((despesa) => despesa.id !== id);
+    removeItemRedux(filteredArray);
   }
 
   tableDespesa() {
@@ -21,6 +29,7 @@ class Table extends Component {
           <td className="td-tag">{despesa.tag}</td>
           <td className="td-method">{despesa.method}</td>
           <td className="td-value">{despesa.value}</td>
+          { /* esse split() eu me basiei no código do repositório do '[Gessé Carlos]' */ }
           <td className="td-cy">
             {(despesa.exchangeRates[despesa.currency].name)
               .split('/')[0]}
@@ -34,8 +43,7 @@ class Table extends Component {
               .toFixed(2)}
           </td>
           <td className="td-moedas">Real</td>
-          <button className="btn" type="button">Editar</button>
-          <button className="btn2" type="button">Excluir</button>
+          <ButtonTable id={ despesa.id } deleteItem={ this.deleteItem } />
         </tr>)));
   }
 
@@ -72,6 +80,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   isLoading: () => dispatch(requestAPI()),
+  removeItemRedux: (payload) => dispatch(removeItem(payload)),
 });
 
 Table.propTypes = {

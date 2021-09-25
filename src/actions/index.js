@@ -2,6 +2,7 @@
 export const SET_LOGIN = 'SET_LOGIN';
 export const ADD_EXPENSES = 'ADD_EXPENSES';
 export const REQUEST_API = 'REQUEST_API';
+export const REMOVE_ITEM = 'REMOVE_ITEM';
 
 export const setLogin = (email) => ({
   type: SET_LOGIN,
@@ -15,6 +16,11 @@ const addExpenses = (expense) => ({
 
 export const requestAPI = () => ({
   type: REQUEST_API,
+});
+
+export const removeItem = (payload) => ({
+  type: REMOVE_ITEM,
+  payload,
 });
 
 export function setExpenses(expense) {
