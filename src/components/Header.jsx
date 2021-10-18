@@ -15,8 +15,8 @@ class Header extends React.Component {
     if (!loadingRedux) {
       const total = expense.reduce((acc, valores) => {
         const { value, currency, exchangeRates } = valores;
-        const rate = exchangeRates[currency].ask;
-        acc += (parseFloat(value) * parseFloat(rate));
+        const cotacaoAtual = exchangeRates[currency].ask;
+        acc += (parseFloat(value) * parseFloat(cotacaoAtual));
         return acc;
       }, 0);
       return total.toFixed(2);
@@ -29,7 +29,7 @@ class Header extends React.Component {
     return (
       <div>
         {loadingRedux ? LOADING : (
-          <dinpmv>
+          <div>
             <header className="header-container">
               <img className="logo" src={ imagem } alt="" />
               <div className="valor">
@@ -40,7 +40,7 @@ class Header extends React.Component {
                 </div>
               </div>
             </header>
-          </dinpmv>
+          </div>
         )}
       </div>
     );

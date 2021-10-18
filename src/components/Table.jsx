@@ -64,9 +64,9 @@ class Table extends Component {
               <th>Editar/Excluir</th>
             </tr>
           </thead>
-          <thead className="table-body">
+          <tbody className="table-body">
             {this.tableDespesa()}
-          </thead>
+          </tbody>
         </table>
       </div>
     );
