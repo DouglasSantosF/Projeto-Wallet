@@ -1,11 +1,10 @@
 
 # Projeto Wallet
 
-#### Este foi um projeto da **Trybe** em que testamos nossos conhecimentos ao acessar uma base de dados e utilizar os itens da base de dados para montar cards na tela para o usuário ver, também foi testado as manipulações entre componentes do React, a criação e manipulação do forms e seus inputs, além da estilização dos componentes. Ele tem como objetivo mostrar meus conhecimentos em **React**, **Javascript**, **manipulação de componentes**, **CSS**. 
-
 #### Este foi um projeto da **Trybe** em que testamos nossos conhecimentos ao acessar uma Api de câmbio, onde o usuário poderia anotar seus gastos e fazer a conversão pra qualquer moeda, e ele foi desenvolvido para por em prática nossos conhecimentos da bibliotéca Redux, também foi testado as manipulações entre componentes do React, a criação e manipulação do forms e seus inputs, além da estilização dos componentes. Ele tem como objetivo mostrar meus conhecimentos em **React**, **Javascript**, **manipulação de componentes**, **CSS**, **página de login**  e **Redux**. 
 ---
 <br>
+
 Este projeto foi importante, pois nele consegui testar meus conhecimentos em Redux, que é uma biblioteca de gerênciamento de estado global no React. Com isso, os estados poderiam ficar armazenado em um local separado, e os componentes poderiam acessar esses dados e editá-los de forma direta. Também utilizei a criação de tabela para montar a planília de gastos para o usuário.
 
 <br>
@@ -14,6 +13,7 @@ Este projeto foi importante, pois nele consegui testar meus conhecimentos em Red
 ### **Tecnologias utilizadas**
 ---
 ---
+
 
 <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"></img>
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"></img>
